@@ -4,7 +4,7 @@ import 'normalize.css';
 import './reset.scss';
 import './index.scss';
 import 'bootstrap/scss/bootstrap.scss';
-import App from './components/App/App';
+import App from './components/App/App.jsx';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));

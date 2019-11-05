@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.scss";
-import MainHeader from "../MainHeader/MainHeader";
-import Encryptor from "../Encryptor/Encryptor";
-import MainFooter from "../MainFooter/MainFooter";
+import MainHeader from "../MainHeader/MainHeader.jsx";
+import Encryptor from "../Encryptor/Encryptor.jsx";
+import MainFooter from "../MainFooter/MainFooter.jsx";
 import { Navbar } from "react-bootstrap";
 
 class App extends React.Component {

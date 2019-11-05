@@ -1,8 +1,8 @@
 import React from "react";
 import "./Encryptor.scss";
-import Key from "./Key/Key";
-import RawText from "./RawText/RawText";
-import EncryptedText from "./EncryptedText/EncryptedText";
+import Key from "./Key/Key.jsx";
+import RawText from "./RawText/RawText.jsx";
+import EncryptedText from "./EncryptedText/EncryptedText.jsx";
 
 class Encryptor extends React.Component {
   render() {
