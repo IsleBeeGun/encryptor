@@ -1,5 +1,5 @@
 import React from 'react';
-import './Encryptor.css';
+import './Encryptor.scss';
 
 class Encryptor extends React.Component {
     render() {
