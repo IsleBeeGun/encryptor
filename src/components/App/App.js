@@ -3,6 +3,7 @@ import './App.scss';
 import MainHeader from '../MainHeader/MainHeader';
 import Encryptor from '../Encryptor/Encryptor';
 import MainFooter from '../MainFooter/MainFooter';
+import {Navbar} from 'react-bootstrap';
 
 class App extends React.Component {
   constructor(props) {
