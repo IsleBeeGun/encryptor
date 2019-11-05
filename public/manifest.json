@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Encryptor",
+  "name": "Simple app for encrypting plain text",
   "icons": [
     {
       "src": "favicon.ico",
