@@ -6,13 +6,17 @@ import EncryptedText from "./EncryptedText/EncryptedText";
 
 class Encryptor extends React.Component {
   render() {
-    return <div className="Encryptor">
-      <p>test1</p>
-      <Key />
-      <RawText />
-      <EncryptedText />
-      <p>test2</p>
-    </div>;
+    return (
+      <div className="Encryptor row">
+        <div className="col">
+          <Key />
+          <div className="row">
+            <RawText />
+            <EncryptedText />
+          </div>
+        </div>
+      </div>
+    );
   }
 }
 
