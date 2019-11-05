@@ -5,7 +5,7 @@ class Key extends React.Component {
   render() {
     return (
       <div className="Key row">
-        <div className="col">
+        <div className="col bg-warning">
           <p>Key</p>
         </div>
       </div>
