@@ -1,75 +1,76 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers } from "redux";
+
+//-------* Constants-types
+const PROVIDE_KEY = "PROVIDE_KEY";
+const PROVIDE_RAW_TEXT = "PROVIDE_RAW_TEXT";
+const PROVIDE_ENCRYPTED_TEXT = "PROVIDE_ENCRYPTED_TEXT";
 
 //-------* Action creators (people)
-const createClaim = (name, amountOfMoneyToCollect) => {
+const provideKey = key => {
   return {
-    // This is the form
-    type: "CREATE_CLAIM",
+    // This is the action (form)
+    type: PROVIDE_KEY,
     payload: {
-      name: name,
-      amountOfMoneyToCollect: amountOfMoneyToCollect
+      key: key
     }
   };
 };
 
-const createPolicy = name => {
+const provideRawText = rawText => {
   return {
-    type: "CREATE_POLICY",
+    // This is the action (form)
+    type: PROVIDE_RAW_TEXT,
     payload: {
-      name: name,
-      amount: 20
+      rawText: rawText
     }
   };
 };
 
-const deletePolicy = name => {
+const provideEncryptedText = encryptedText => {
   return {
-    type: "DELETE_POLICY",
+    // This is the action (form)
+    type: PROVIDE_ENCRYPTED_TEXT,
     payload: {
-      name: name
+      encryptedText: encryptedText
     }
   };
 };
 
 //-------* Reducers (departments)
 
-const claimsHistory = (oldListOfClaims = [], action) => {
-  if (action.type === "CREATE_CLAIM") {
-    return [...oldListOfClaims, action.payload];
+const key = (listOfKeys = [], action) => {
+  if (action.type === PROVIDE_KEY) {
+    return [...listOfKeys, action.payload];
   } else {
-    return oldListOfClaims;
+    return listOfKeys;
   }
 };
 
-const accounting = (bagOfMoney = 100, action) => {
-  if (action.type === "CREATE_CLAIM") {
-    return bagOfMoney - action.payload.amountOfMoneyToCollect;
-  } else if (action.type === "CREATE_POLICY") {
-    return bagOfMoney + action.payload.amount;
+const rawText= (listOfRawTexts = [], action) => {
+  if (action.type === PROVIDE_RAW_TEXT) {
+    return [...listOfRawTexts, action.payload];
   } else {
-    return bagOfMoney;
+    return listOfRawTexts;
   }
 };
 
-const policies = (listOfPolicies = [], action) => {
-  if (action.type === "CREATE_POLICY") {
-    return [...listOfPolicies, action.payload.name];
-  } else if (action.type === "DELETE_POLICY") {
-    return listOfPolicies.filter(policy => policy != action.payload.name);
+const encryptedText= (listOfEncryptedTexts = [], action) => {
+  if (action.type === PROVIDE_ENCRYPTED_TEXT) {
+    return [...listOfEncryptedTexts, action.payload];
   } else {
-    return listOfPolicies;
+    return listOfEncryptedTexts;
   }
 };
 
 //-------* Binding reducers into single unit
-const ourDepartments = combineReducers({
-  accounting: accounting,
-  claimsHistory: claimsHistory,
-  policies: policies
+const allReducers = combineReducers({
+  key: key,
+  rawText: rawText,
+  encryptedText: encryptedText
 });
 
 //-------* Creating Store
-const store = createStore(ourDepartments);
+const store = createStore(allReducers);
 
 //dispatch function belongs to store object
 //dispatch function takes that form and automatically
