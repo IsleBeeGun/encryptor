@@ -3,12 +3,9 @@ import "./App.scss";
 import MainHeader from "../MainHeader/MainHeader.jsx";
 import Encryptor from "../Encryptor/Encryptor.jsx";
 import MainFooter from "../MainFooter/MainFooter.jsx";
-import { Navbar } from "react-bootstrap";
+//import { Navbar } from "react-bootstrap";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <div className="App container-fluid h-100">

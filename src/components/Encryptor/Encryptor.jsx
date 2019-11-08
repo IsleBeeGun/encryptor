@@ -3,7 +3,6 @@ import "./Encryptor.scss";
 import Key from "./Key/Key.jsx";
 import RawText from "./RawText/RawText.jsx";
 import EncryptedText from "./EncryptedText/EncryptedText.jsx";
-import Algorithm from "./Algorithm";
 
 class Encryptor extends React.Component {
   render() {
