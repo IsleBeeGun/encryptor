@@ -40,37 +40,31 @@ export const provideEncryptedText = encryptedText => {
 
 const key = (listOfKeys, action) => {
   if (action.type === PROVIDE_KEY) {
-    listOfKeys.push(action.payload);
-    listOfKeys[listOfKeys.length-1].isActive = true;
-    return listOfKeys;
-    // return [...listOfKeys, action.payload];
+    action.payload = {isActive:true};
+    return [...listOfKeys, action.payload];
   } else {
-    listOfKeys.isActive = false;
-    return listOfKeys;
+    action.payload = {isActive:false};
+    return [...listOfKeys, action.payload]
   }
 };
 
 const rawText = (listOfRawTexts, action) => {
   if (action.type === PROVIDE_RAW_TEXT) {
-    listOfRawTexts.push(action.payload);
-    listOfRawTexts[listOfRawTexts.length-1].isActive = true;
-    return listOfRawTexts;
-    // return [...listOfRawTexts, action.payload];
+    action.payload = {isActive:true};
+    return [...listOfRawTexts, action.payload];
   } else {
-    listOfRawTexts.isActive = false;
-    return listOfRawTexts;
+    action.payload = {isActive:false};
+    return [...listOfRawTexts, action.payload];
   }
 };
 
 const encryptedText = (listOfEncryptedTexts, action) => {
   if (action.type === PROVIDE_ENCRYPTED_TEXT) {
-    listOfEncryptedTexts.push(action.payload);
-    listOfEncryptedTexts[listOfEncryptedTexts.length-1].isActive = true;
-    return listOfEncryptedTexts;
-    // return [...listOfEncryptedTexts, action.payload];
+    action.payload = {isActive:true};
+    return [...listOfEncryptedTexts, action.payload];
   } else {
-    listOfEncryptedTexts.isActive = false;
-    return listOfEncryptedTexts;
+    action.payload = {isActive:false};
+    return [...listOfEncryptedTexts, action.payload];
   }
 };
 
