@@ -1,8 +1,6 @@
+import store from '../../store/store';
 const Algorithm = {
-    encrypt(key, text) {
-
-    },
-    decrypt(key, text) {
+    perform() {
 
     }
 }

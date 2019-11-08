@@ -1,6 +1,7 @@
 import React from "react";
 import "./Key.scss";
 import store from '../../../store/store';
+import Algorithm from '../Algorithm';
 
 class Key extends React.Component {
   constructor(props) {
@@ -8,21 +9,18 @@ class Key extends React.Component {
     this.state = {
       key: ''
     };
-    this.handleEncryption = this.handleEncryption.bind(this);
     this.handleKeyChange = this.handleKeyChange.bind(this);
-  }
-  handleEncryption() {
-    // this.props.searchGoogle(this.state.keyword, this.state.type, this.state.sortBy);
   }
   async handleKeyChange(event) {
     await this.setState({ key: event.target.value });
-    this.handleEncryption();
+    await store.dispatch(store.provideKey(this.state.key));
+    Algorithm.perform();
   }
   render() {
     return (
       <div className="Key row">
         <div className="col bg-warning">
-          <input placeholder="Type your password here.." onChange={this.handleKeyChange} />
+          <input placeholder="Your password.." onChange={this.handleKeyChange} />
         </div>
       </div>
     );
