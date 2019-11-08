@@ -11,7 +11,7 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div className="App container-fluid">
+      <div className="App container-fluid h-100">
         <MainHeader />
         <Encryptor />
         <MainFooter />

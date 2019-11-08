@@ -1,6 +1,6 @@
 import React from "react";
 import "./Key.scss";
-import store from '../../../store/store';
+import {store, provideKey} from '../../../store/store';
 import Algorithm from '../Algorithm';
 
 class Key extends React.Component {
@@ -13,7 +13,7 @@ class Key extends React.Component {
   }
   async handleKeyChange(event) {
     await this.setState({ key: event.target.value });
-    await store.dispatch(store.provideKey(this.state.key));
+    await store.dispatch(provideKey(this.state.key));
     Algorithm.perform();
   }
   render() {

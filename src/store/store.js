@@ -6,32 +6,35 @@ const PROVIDE_RAW_TEXT = "PROVIDE_RAW_TEXT";
 const PROVIDE_ENCRYPTED_TEXT = "PROVIDE_ENCRYPTED_TEXT";
 
 //-------* Action creators (people)
-const provideKey = key => {
+export const provideKey = key => {
   return {
     // This is the action (form)
     type: PROVIDE_KEY,
     payload: {
-      key: key
+      key: key,
+      isActive: true
     }
   };
 };
 
-const provideRawText = rawText => {
+export const provideRawText = rawText => {
   return {
     // This is the action (form)
     type: PROVIDE_RAW_TEXT,
     payload: {
-      rawText: rawText
+      rawText: rawText,
+      isActive: true
     }
   };
 };
 
-const provideEncryptedText = encryptedText => {
+export const provideEncryptedText = encryptedText => {
   return {
     // This is the action (form)
     type: PROVIDE_ENCRYPTED_TEXT,
     payload: {
-      encryptedText: encryptedText
+      encryptedText: encryptedText,
+      isActive: true
     }
   };
 };
@@ -42,22 +45,25 @@ const key = (listOfKeys = [], action) => {
   if (action.type === PROVIDE_KEY) {
     return [...listOfKeys, action.payload];
   } else {
+    listOfKeys.isActive = false;
     return listOfKeys;
   }
 };
 
-const rawText= (listOfRawTexts = [], action) => {
+const rawText = (listOfRawTexts = [], action) => {
   if (action.type === PROVIDE_RAW_TEXT) {
     return [...listOfRawTexts, action.payload];
   } else {
+    listOfRawTexts.isActive = false;
     return listOfRawTexts;
   }
 };
 
-const encryptedText= (listOfEncryptedTexts = [], action) => {
+const encryptedText = (listOfEncryptedTexts = [], action) => {
   if (action.type === PROVIDE_ENCRYPTED_TEXT) {
     return [...listOfEncryptedTexts, action.payload];
   } else {
+    listOfEncryptedTexts.isActive = false;
     return listOfEncryptedTexts;
   }
 };
@@ -70,7 +76,7 @@ const allReducers = combineReducers({
 });
 
 //-------* Creating Store
-const store = createStore(allReducers);
+export const store = createStore(allReducers);
 
 //dispatch function belongs to store object
 //dispatch function takes that form and automatically
@@ -80,4 +86,3 @@ const store = createStore(allReducers);
 // store.dispatch(deletePolicy("Alex"));
 //getState() lets us to access final database, it's current state
 // console.log(store.getState());
-export default store;
