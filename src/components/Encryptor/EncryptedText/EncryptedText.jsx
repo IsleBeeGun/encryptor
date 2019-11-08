@@ -1,5 +1,6 @@
 import React from "react";
 import "./EncryptedText.scss";
+import store from '../../../store/store';
 
 class EncryptedText extends React.Component {
   render() {

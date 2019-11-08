@@ -1,5 +1,6 @@
 import React from "react";
 import "./RawText.scss";
+import store from '../../../store/store';
 
 class RawText extends React.Component {
   render() {

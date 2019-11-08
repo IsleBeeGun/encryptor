@@ -1,5 +1,6 @@
 import React from "react";
 import "./Key.scss";
+import store from '../../../store/store';
 
 class Key extends React.Component {
   constructor(props) {
