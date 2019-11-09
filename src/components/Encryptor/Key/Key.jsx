@@ -1,6 +1,6 @@
 import React from "react";
 import "./Key.scss";
-import {store, provideKey} from '../../../store/store';
+import { store, provideKey } from '../../../store/store';
 import Algorithm from '../Algorithm';
 
 class Key extends React.Component {
@@ -23,8 +23,8 @@ class Key extends React.Component {
           <input placeholder="Your password.." onChange={this.handleKeyChange} />
         </div>
       </div>
-    );
-  }
-}
-
-export default Key;
+        );
+      }
+    }
+    
+    export default Key;
