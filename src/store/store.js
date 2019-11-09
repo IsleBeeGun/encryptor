@@ -12,6 +12,7 @@ export const provideKey = key => {
     type: PROVIDE_KEY,
     payload: {
       key: key,
+      isActive: true
     }
   };
 };
@@ -22,6 +23,7 @@ export const provideRawText = rawText => {
     type: PROVIDE_RAW_TEXT,
     payload: {
       rawText: rawText,
+      isActive: true
     }
   };
 };
@@ -32,39 +34,43 @@ export const provideEncryptedText = encryptedText => {
     type: PROVIDE_ENCRYPTED_TEXT,
     payload: {
       encryptedText: encryptedText,
+      isActive: true
     }
   };
 };
 
 //-------* Reducers (departments)
 
-const key = (listOfKeys, action) => {
+const key = (listOfKeys = [{ key: "", isActive: false }], action) => {
   if (action.type === PROVIDE_KEY) {
-    action.payload = {isActive:true};
     return [...listOfKeys, action.payload];
   } else {
-    action.payload = {isActive:false};
-    return [...listOfKeys, action.payload]
+    listOfKeys = [{ isActive: false }];
+    return listOfKeys;
   }
 };
 
-const rawText = (listOfRawTexts, action) => {
+const rawText = (
+  listOfRawTexts = [{ rawText: "", isActive: false }],
+  action
+) => {
   if (action.type === PROVIDE_RAW_TEXT) {
-    action.payload = {isActive:true};
     return [...listOfRawTexts, action.payload];
   } else {
-    action.payload = {isActive:false};
-    return [...listOfRawTexts, action.payload];
+    listOfRawTexts = [{ isActive: false }];
+    return listOfRawTexts;
   }
 };
 
-const encryptedText = (listOfEncryptedTexts, action) => {
+const encryptedText = (
+  listOfEncryptedTexts = [{ encryptedText: "", isActive: false }],
+  action
+) => {
   if (action.type === PROVIDE_ENCRYPTED_TEXT) {
-    action.payload = {isActive:true};
     return [...listOfEncryptedTexts, action.payload];
   } else {
-    action.payload = {isActive:false};
-    return [...listOfEncryptedTexts, action.payload];
+    listOfEncryptedTexts = [{ isActive: false }];
+    return listOfEncryptedTexts;
   }
 };
 
