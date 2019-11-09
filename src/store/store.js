@@ -83,7 +83,7 @@ const rawText = (
     listOfRawTexts = [
       ...listOfRawTexts,
       {
-        key: listOfRawTexts[listOfRawTexts.length - 1].key,
+        rawText: listOfRawTexts[listOfRawTexts.length - 1].rawText,
         isActive: listOfRawTexts[listOfRawTexts.length - 1].isActive
       }
     ];
@@ -110,7 +110,7 @@ const encryptedText = (
     listOfEncryptedTexts = [
       ...listOfEncryptedTexts,
       {
-        key: listOfEncryptedTexts[listOfEncryptedTexts.length - 1].key,
+        encryptedText: listOfEncryptedTexts[listOfEncryptedTexts.length - 1].encryptedText,
         isActive: listOfEncryptedTexts[listOfEncryptedTexts.length - 1].isActive
       }
     ];
