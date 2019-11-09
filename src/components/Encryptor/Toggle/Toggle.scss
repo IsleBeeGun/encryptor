@@ -1,0 +1,57 @@
+.Toggle {
+  text-align: center;
+}
+
+.switch {
+    display: inline-block;
+    text-transform: uppercase;
+    position: relative;
+    margin: 1rem;
+    height: 44px;
+    width: 345px;
+  }
+  
+  .switch-label {
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 170px;
+    line-height: 47px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .switch-label-off {
+    padding-left: 2px;
+  }
+  
+  .switch-label-on {
+    padding-right: 2px;
+  }
+  
+  .switch-input {
+    display: none;
+  }
+  
+  .switch-input:checked + .switch-label {
+    color: #fff;
+    transition: 500ms cubic-bezier(0.075, 0.820, 0.165, 1.000);
+    transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+  }
+  
+  .switch-input:checked + .switch-label-on ~ .switch-selection {
+    left: 172px;
+  }
+  
+  .switch-selection {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 3px;
+    left: 3px;
+    width: 170px;
+    height: 38px;
+    background-color: green;
+    transition: 500ms cubic-bezier(0.075, 0.820, 0.165, 1.000);
+    transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+  }
