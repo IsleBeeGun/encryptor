@@ -56,7 +56,7 @@ const key = (listOfKeys = [{ key: "", isActive: false }], action) => {
   if (action.type === PROVIDE_KEY) {
     return [...listOfKeys, action.payload];
   } else {
-    listOfKeys = [{ isActive: false }];
+    listOfKeys = [...listOfKeys, {key: listOfKeys[listOfKeys.length-1].key, isActive: false }];  // I guess here (and below) I screw inmutability
     return listOfKeys;
   }
 };
@@ -68,7 +68,7 @@ const rawText = (
   if (action.type === PROVIDE_RAW_TEXT) {
     return [...listOfRawTexts, action.payload];
   } else {
-    listOfRawTexts = [{ isActive: false }];
+    listOfRawTexts = [...listOfRawTexts, {rawText: listOfRawTexts[listOfRawTexts.length-1].rawText, isActive: false }];
     return listOfRawTexts;
   }
 };
@@ -80,12 +80,12 @@ const encryptedText = (
   if (action.type === PROVIDE_ENCRYPTED_TEXT) {
     return [...listOfEncryptedTexts, action.payload];
   } else {
-    listOfEncryptedTexts = [{ isActive: false }];
+    listOfEncryptedTexts = [...listOfEncryptedTexts, {encryptedText: listOfEncryptedTexts[listOfEncryptedTexts.length-1].encryptedText, isActive: false }]; 
     return listOfEncryptedTexts;
   }
 };
 
-const task = (listOfTasks = [{ task: "encrypt"}], action) => {
+const task = (listOfTasks = [{ task: "encrypt"}], action) => {  // Here I've decided not to update state
   if (action.type === PROVIDE_TASK) {
     return [...listOfTasks, action.payload];
   } else {
