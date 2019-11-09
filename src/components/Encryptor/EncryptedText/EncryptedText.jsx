@@ -19,7 +19,7 @@ class EncryptedText extends React.Component {
   render() {
     return (
       <div className="EncryptedText col bg-danger text-white">
-        <textarea placeholder="Your encrypted text will appear here.." onChange={this.handleEncryptedTextChange} rows="5" cols="33" />
+        <textarea placeholder="Your encrypted text will appear here.." onChange={this.handleEncryptedTextChange} rows="10" cols="36" />
       </div>
     );
   }

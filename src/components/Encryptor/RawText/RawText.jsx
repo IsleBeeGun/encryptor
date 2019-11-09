@@ -19,7 +19,7 @@ class RawText extends React.Component {
   render() {
     return (
       <div className="RawText col bg-success text-white">
-        <textarea placeholder="Place your text here" onChange={this.handleRawTextChange} rows="5" cols="33" />
+        <textarea placeholder="Place your text here" onChange={this.handleRawTextChange} rows="10" cols="36" />
       </div>
     );
   }
