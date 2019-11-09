@@ -4,6 +4,7 @@ import { createStore, combineReducers } from "redux";
 const PROVIDE_KEY = "PROVIDE_KEY";
 const PROVIDE_RAW_TEXT = "PROVIDE_RAW_TEXT";
 const PROVIDE_ENCRYPTED_TEXT = "PROVIDE_ENCRYPTED_TEXT";
+const PROVIDE_TASK = "PROVIDE_TASK";
 
 //-------* Action creators (people)
 export const provideKey = key => {
@@ -35,6 +36,16 @@ export const provideEncryptedText = encryptedText => {
     payload: {
       encryptedText: encryptedText,
       isActive: true
+    }
+  };
+};
+
+export const provideTask = task => {
+  return {
+    // This is the action (form)
+    type: PROVIDE_TASK,
+    payload: {
+      task: task
     }
   };
 };
@@ -74,11 +85,20 @@ const encryptedText = (
   }
 };
 
+const task = (listOfTasks = [{ task: "encrypt"}], action) => {
+  if (action.type === PROVIDE_TASK) {
+    return [...listOfTasks, action.payload];
+  } else {
+    return listOfTasks;
+  }
+};
+
 //-------* Binding reducers into single unit
 const allReducers = combineReducers({
   key: key,
   rawText: rawText,
-  encryptedText: encryptedText
+  encryptedText: encryptedText,
+  task: task
 });
 
 //-------* Creating Store

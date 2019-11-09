@@ -1,18 +1,22 @@
 import React from "react";
 import "./Toggle.scss";
+import { store, provideTask } from '../../../store/store';
+import Algorithm from '../Algorithm';
 
 class Toggle extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      toggle: "encrypt"
+      task: "encrypt"
     };
     this.handleToggleChange = this.handleToggleChange.bind(this);
   }
   async handleToggleChange(event) {
-    await this.setState({ toggle: event.target.value });
+    await this.setState({ task: event.target.value });
     // console.clear();
     // console.log(`%c${this.state.toggle}`, 'background: #000; color: #0f0');
+    await store.dispatch(provideTask(this.state.task));
+    Algorithm.perform();
   }
   render() {
     return (
