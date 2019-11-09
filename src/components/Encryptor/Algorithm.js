@@ -13,6 +13,8 @@ const Algorithm = {
     console.log(`%c${state.key[state.key.length - 1].key}`,'color: white; background-color: orange');
     console.log(`%c${state.rawText[state.rawText.length - 1].rawText}`,'color: white; background-color: green');
     console.log(`%c${state.encryptedText[state.encryptedText.length - 1].encryptedText}`,'color: white; background-color: red');
+
+    
   }
 };
 
