@@ -20,14 +20,14 @@ class EncryptedText extends React.Component {
   async getEncryptedText() {
     let state = store.getState();
     await this.setState({ encryptedText: state.encryptedText[state.encryptedText.length - 1].encryptedText });
+    return this.state.encryptedText;
   }
   render() {
     return (
       <div className="EncryptedText col bg-danger text-white">
-        <textarea value={this.state.encryptedText} onChange={this.handleEncryptedTextChange} rows="10" cols="36" />
+        <textarea defaultValue={this.getEncryptedText} onChange={this.handleEncryptedTextChange} rows="10" cols="36" />
       </div>
     );
   }
 }
-
 export default EncryptedText;
