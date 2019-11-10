@@ -29,6 +29,18 @@ export const provideRawText = rawText => {
   };
 };
 
+export const provideRawTextFromAlgorithm = rawText => {
+  return {
+    // This is the action (form)
+    type: PROVIDE_RAW_TEXT,
+    payload: {
+      rawText: rawText,
+      isActive: false
+    }
+  };
+};
+
+
 export const provideEncryptedText = encryptedText => {
   return {
     // This is the action (form)
@@ -36,6 +48,17 @@ export const provideEncryptedText = encryptedText => {
     payload: {
       encryptedText: encryptedText,
       isActive: true
+    }
+  };
+};
+
+export const provideEncryptedTextFromAlgorithm = encryptedText => {
+  return {
+    // This is the action (form)
+    type: PROVIDE_ENCRYPTED_TEXT,
+    payload: {
+      encryptedText: encryptedText,
+      isActive: false
     }
   };
 };
