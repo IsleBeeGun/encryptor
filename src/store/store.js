@@ -4,7 +4,6 @@ import { createStore, combineReducers } from "redux";
 const PROVIDE_KEY = "PROVIDE_KEY";
 const PROVIDE_RAW_TEXT = "PROVIDE_RAW_TEXT";
 const PROVIDE_ENCRYPTED_TEXT = "PROVIDE_ENCRYPTED_TEXT";
-const PROVIDE_TASK = "PROVIDE_TASK";
 
 //-------* Action creators (people)
 export const provideKey = key => {
@@ -63,30 +62,12 @@ export const provideEncryptedTextFromAlgorithm = encryptedText => {
   };
 };
 
-export const provideTask = task => {
-  return {
-    // This is the action (form)
-    type: PROVIDE_TASK,
-    payload: {
-      task: task
-    }
-  };
-};
 
 //-------* Reducers (departments)
 
 const key = (listOfKeys = [{ key: "", isActive: false }], action) => {
   if (action.type === PROVIDE_KEY) {
     return [...listOfKeys, action.payload];
-  } else if (action.type === PROVIDE_TASK) {
-    listOfKeys = [
-      ...listOfKeys,
-      {
-        key: listOfKeys[listOfKeys.length - 1].key,
-        isActive: listOfKeys[listOfKeys.length - 1].isActive
-      }
-    ];
-    return listOfKeys;
   } else {
     listOfKeys = [
       ...listOfKeys,
@@ -102,15 +83,6 @@ const rawText = (
 ) => {
   if (action.type === PROVIDE_RAW_TEXT) {
     return [...listOfRawTexts, action.payload];
-  } else if (action.type === PROVIDE_TASK) {
-    listOfRawTexts = [
-      ...listOfRawTexts,
-      {
-        rawText: listOfRawTexts[listOfRawTexts.length - 1].rawText,
-        isActive: listOfRawTexts[listOfRawTexts.length - 1].isActive
-      }
-    ];
-    return listOfRawTexts;
   } else {
     listOfRawTexts = [
       ...listOfRawTexts,
@@ -129,15 +101,6 @@ const encryptedText = (
 ) => {
   if (action.type === PROVIDE_ENCRYPTED_TEXT) {
     return [...listOfEncryptedTexts, action.payload];
-  } else if (action.type === PROVIDE_TASK) {
-    listOfEncryptedTexts = [
-      ...listOfEncryptedTexts,
-      {
-        encryptedText: listOfEncryptedTexts[listOfEncryptedTexts.length - 1].encryptedText,
-        isActive: listOfEncryptedTexts[listOfEncryptedTexts.length - 1].isActive
-      }
-    ];
-    return listOfEncryptedTexts;
   } else {
     listOfEncryptedTexts = [
       ...listOfEncryptedTexts,
@@ -151,21 +114,12 @@ const encryptedText = (
   }
 };
 
-const task = (listOfTasks = [{ task: "encrypt" }], action) => {
-  // Here I've decided not to update state
-  if (action.type === PROVIDE_TASK) {
-    return [...listOfTasks, action.payload];
-  } else {
-    return listOfTasks;
-  }
-};
 
 //-------* Binding reducers into single unit
 const allReducers = combineReducers({
   key: key,
   rawText: rawText,
   encryptedText: encryptedText,
-  task: task
 });
 
 //-------* Creating Store
