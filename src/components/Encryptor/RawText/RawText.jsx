@@ -11,7 +11,7 @@ class RawText extends React.Component {
   }
   async handleRawTextChange(event) {
     await store.dispatch(provideRawText(event.target.value));
-    Algorithm.perform();
+    await Algorithm.perform();
   }
   render() {
     return (

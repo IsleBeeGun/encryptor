@@ -4,6 +4,8 @@ import { createStore, combineReducers } from "redux";
 const PROVIDE_KEY = "PROVIDE_KEY";
 const PROVIDE_RAW_TEXT = "PROVIDE_RAW_TEXT";
 const PROVIDE_ENCRYPTED_TEXT = "PROVIDE_ENCRYPTED_TEXT";
+const PROVIDE_RAW_TEXT_FROM_ALGORITHM = "PROVIDE_RAW_TEXT_FROM_ALGORITHM";
+const PROVIDE_ENCRYPTED_TEXT_FROM_ALGORITHM = "PROVIDE_ENCRYPTED_TEXT_FROM_ALGORITHM";
 
 //-------* Action creators (people)
 export const provideKey = key => {
@@ -28,6 +30,17 @@ export const provideRawText = rawText => {
   };
 };
 
+export const provideRawTextFromAlgorithm = rawText => {
+  return {
+    // This is the action (form)
+    type: PROVIDE_RAW_TEXT_FROM_ALGORITHM,
+    payload: {
+      rawText: rawText,
+      isActive: false
+    }
+  };
+};
+
 export const provideEncryptedText = encryptedText => {
   return {
     // This is the action (form)
@@ -39,6 +52,16 @@ export const provideEncryptedText = encryptedText => {
   };
 };
 
+export const provideEncryptedTextFromAlgorithm = encryptedText => {
+  return {
+    // This is the action (form)
+    type: PROVIDE_ENCRYPTED_TEXT_FROM_ALGORITHM,
+    payload: {
+      encryptedText: encryptedText,
+      isActive: false
+    }
+  };
+};
 
 //-------* Reducers (departments)
 
@@ -58,8 +81,17 @@ const rawText = (
   listOfRawTexts = [{ rawText: "", isActive: false }],
   action
 ) => {
-  if (action.type === PROVIDE_RAW_TEXT) {
+  if ((action.type === PROVIDE_RAW_TEXT)||(action.type === PROVIDE_RAW_TEXT_FROM_ALGORITHM)) {
     return [...listOfRawTexts, action.payload];
+  } else if (action.type === PROVIDE_ENCRYPTED_TEXT_FROM_ALGORITHM) {
+    listOfRawTexts = [
+      ...listOfRawTexts,
+      {
+        rawText: listOfRawTexts[listOfRawTexts.length - 1].rawText,
+        isActive: true
+      }
+    ];
+    return listOfRawTexts;
   } else {
     listOfRawTexts = [
       ...listOfRawTexts,
@@ -76,8 +108,18 @@ const encryptedText = (
   listOfEncryptedTexts = [{ encryptedText: "", isActive: false }],
   action
 ) => {
-  if (action.type === PROVIDE_ENCRYPTED_TEXT) {
+  if ((action.type === PROVIDE_ENCRYPTED_TEXT)||(action.type === PROVIDE_ENCRYPTED_TEXT_FROM_ALGORITHM)) {
     return [...listOfEncryptedTexts, action.payload];
+  } else if (action.type === PROVIDE_RAW_TEXT_FROM_ALGORITHM) {
+    listOfEncryptedTexts = [
+      ...listOfEncryptedTexts,
+      {
+        encryptedText:
+          listOfEncryptedTexts[listOfEncryptedTexts.length - 1].encryptedText,
+        isActive: true
+      }
+    ];
+    return listOfEncryptedTexts;
   } else {
     listOfEncryptedTexts = [
       ...listOfEncryptedTexts,

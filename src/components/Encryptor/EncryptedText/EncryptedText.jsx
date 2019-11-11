@@ -11,7 +11,7 @@ class EncryptedText extends React.Component {
   }
   async handleEncryptedTextChange(event) {
     await store.dispatch(provideEncryptedText(event.target.value ));
-    Algorithm.perform();
+    await Algorithm.perform();
   }
   render() {
     return (

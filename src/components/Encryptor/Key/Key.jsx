@@ -11,7 +11,7 @@ class Key extends React.Component {
   }
   async handleKeyChange(event) {
     await store.dispatch(provideKey(event.target.value));
-    Algorithm.perform();
+    await Algorithm.perform();
   }
   render() {
     return (
