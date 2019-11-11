@@ -7,25 +7,20 @@ class EncryptedText extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      encryptedText: ""
+      encryptedText: this.props.encryptedText
     };
     this.handleEncryptedTextChange = this.handleEncryptedTextChange.bind(this);
-    this.getEncryptedText = this.getEncryptedText.bind(this);
   }
   async handleEncryptedTextChange(event) {
     await this.setState({ encryptedText: event.target.value });
     await store.dispatch(provideEncryptedText(this.state.encryptedText));
     Algorithm.perform();
   }
-  async getEncryptedText() {
-    let state = store.getState();
-    await this.setState({ encryptedText: state.encryptedText[state.encryptedText.length - 1].encryptedText });
-    return this.state.encryptedText;
-  }
   render() {
     return (
       <div className="EncryptedText col bg-danger text-white">
-        <textarea defaultValue={this.getEncryptedText} onChange={this.handleEncryptedTextChange} rows="10" cols="36" />
+        <textarea defaultValue={this.props.encryptedText} onChange={this.handleEncryptedTextChange} rows="10" cols="36" >
+        </textarea>
       </div>
     );
   }

@@ -7,14 +7,14 @@ import {connect} from "react-redux";
 
 class Encryptor extends React.Component {
   render() {
-    console.log(this.props.testStore);
+    console.log(this.props.storeState);
     return (
       <div className="Encryptor row">
         <div className="col">
           <Key />
           <div className="row">
-            <RawText />
-            <EncryptedText />
+            <RawText rawText={this.props.storeState.rawText[this.props.storeState.rawText.length - 1].rawText}/>
+            <EncryptedText encryptedText={this.props.storeState.encryptedText[this.props.storeState.encryptedText.length - 1].encryptedText}/>
           </div>
         </div>
       </div>
@@ -24,7 +24,7 @@ class Encryptor extends React.Component {
 // export default Encryptor;
 export default connect (
   state => ({
-    testStore: state
+    storeState: state
   }),
   dispatch => ({})
 )(Encryptor);

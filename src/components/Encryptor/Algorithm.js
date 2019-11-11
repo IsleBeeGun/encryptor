@@ -2,7 +2,7 @@ import { store, provideEncryptedTextFromAlgorithm, provideRawTextFromAlgorithm }
 const Algorithm = {
   perform() {
     console.clear();
-    console.log(store.getState());
+    // console.log(store.getState());
     let state = store.getState();
     console.log(state);
     console.log(`Key field: ${state.key[state.key.length - 1].isActive}`);
