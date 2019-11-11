@@ -6,14 +6,10 @@ import Algorithm from '../Algorithm';
 class RawText extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      rawText: ""
-    };
     this.handleRawTextChange = this.handleRawTextChange.bind(this);
   }
   async handleRawTextChange(event) {
-    await this.setState({ rawText: event.target.value });
-    await store.dispatch(provideRawText(this.state.rawText));
+    await store.dispatch(provideRawText(event.target.value));
     Algorithm.perform();
   }
   render() {

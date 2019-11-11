@@ -21,7 +21,6 @@ class Encryptor extends React.Component {
     );
   }
 }
-// export default Encryptor;
 export default connect (
   state => ({
     storeState: state

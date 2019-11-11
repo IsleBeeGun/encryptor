@@ -6,14 +6,10 @@ import Algorithm from "../Algorithm";
 class EncryptedText extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      encryptedText: this.props.encryptedText
-    };
     this.handleEncryptedTextChange = this.handleEncryptedTextChange.bind(this);
   }
   async handleEncryptedTextChange(event) {
-    await this.setState({ encryptedText: event.target.value });
-    await store.dispatch(provideEncryptedText(this.state.encryptedText));
+    await store.dispatch(provideEncryptedText(event.target.value ));
     Algorithm.perform();
   }
   render() {
