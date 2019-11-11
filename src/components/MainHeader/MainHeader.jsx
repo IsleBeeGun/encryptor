@@ -6,7 +6,7 @@ class MainHeader extends React.Component {
     return (
       <div className="MainHeader row sticky-top">
         <div className="col bg-primary text-white">
-          <h1>Hello!</h1>
+          <h1>encryptor</h1>
         </div>
       </div>
     );
