@@ -16,7 +16,7 @@ class RawText extends React.Component {
   render() {
     return (
       <div className="RawText col bg-success text-white">
-        <textarea defaultValue={this.props.storeState.rawText[this.props.storeState.rawText.length - 1].rawText} onChange={this.handleRawTextChange} rows="10" cols="36" />
+        <textarea value={this.props.storeState.rawText[this.props.storeState.rawText.length - 1].rawText} onChange={this.handleRawTextChange} rows="10" cols="36" />
       </div>
     );
   }

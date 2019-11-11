@@ -16,7 +16,7 @@ class EncryptedText extends React.Component {
   render() {
     return (
       <div className="EncryptedText col bg-danger text-white">
-        <textarea defaultValue={this.props.storeState.encryptedText[this.props.storeState.encryptedText.length - 1].encryptedText} onChange={this.handleEncryptedTextChange} rows="10" cols="36" >
+        <textarea value={this.props.storeState.encryptedText[this.props.storeState.encryptedText.length - 1].encryptedText} onChange={this.handleEncryptedTextChange} rows="10" cols="36" >
         </textarea>
       </div>
     );
