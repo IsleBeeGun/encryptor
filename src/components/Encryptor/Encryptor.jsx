@@ -4,7 +4,6 @@ import Key from "./Key/Key.jsx";
 import Toggle from "./Toggle/Toggle.jsx";
 import RawText from "./RawText/RawText.jsx";
 import EncryptedText from "./EncryptedText/EncryptedText.jsx";
-// import {store} from "../../store/store";
 
 class Encryptor extends React.Component {
   render() {
