@@ -1,4 +1,4 @@
-import { store, provideEncryptedTextFromAlgorithm, provideRawTextFromAlgorithm } from "../../store/store";
+import { store, provideEncryptedText, provideRawText } from "../../store/store";
 const Algorithm = {
   perform() {
     console.clear();
@@ -14,9 +14,9 @@ const Algorithm = {
     console.log(`%c${state.encryptedText[state.encryptedText.length - 1].encryptedText}`,'color: white; background-color: red');
 
     if (state.rawText[state.rawText.length - 1].isActive) {
-      store.dispatch( provideEncryptedTextFromAlgorithm( this.encrypt(state.key[state.key.length - 1].key, state.rawText[state.rawText.length - 1].rawText) ) ) ;
+      store.dispatch( provideEncryptedText( this.encrypt(state.key[state.key.length - 1].key, state.rawText[state.rawText.length - 1].rawText) ) ) ;
     } else if (state.encryptedText[state.encryptedText.length - 1].isActive) {
-      store.dispatch( provideRawTextFromAlgorithm( this.decrypt(state.key[state.key.length - 1].key, state.encryptedText[state.encryptedText.length - 1].encryptedText) ) );
+      store.dispatch( provideRawText( this.decrypt(state.key[state.key.length - 1].key, state.encryptedText[state.encryptedText.length - 1].encryptedText) ) );
     }
   },
   encrypt(key, text) {
