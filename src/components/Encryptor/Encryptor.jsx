@@ -22,5 +22,4 @@ class Encryptor extends React.Component {
     );
   }
 }
-// store.subscribe( () => { EncryptedText.update() }) ;
 export default Encryptor;
