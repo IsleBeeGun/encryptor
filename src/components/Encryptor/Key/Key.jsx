@@ -5,6 +5,7 @@ import Algorithm from "../Algorithm";
 import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 class Key extends React.Component {
   constructor(props) {
@@ -52,12 +53,12 @@ class Key extends React.Component {
       );
     }
     return (
-      <div className="Key row">
-        <div className="col bg-warning">
-          <div className="row">
+      <div className="Key row bg-warning">
             <div className="col">
               <div className="form-group">
-                <label htmlFor="password" className="font-weight-bold" >Password</label>
+                <label htmlFor="password" className="font-weight-bold">
+                  Password
+                </label>
                 <input
                   type={this.state.showPassword}
                   id="password"
@@ -67,9 +68,23 @@ class Key extends React.Component {
                 />
               </div>
             </div>
-            <div className="col bg-warning">{eyeIcon}</div>
-          </div>
-        </div>
+            <div className="col">
+              <div className="row">
+                <div className="col-fluid">{eyeIcon}</div>
+                <div className="col text-right">
+                  <a
+                    className="github-link"
+                    href="https://github.com/IsleBeeGun/encryptor"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FontAwesomeIcon icon={faGithub} />
+                  </a>
+                </div>
+              </div>
+            </div>
+         
+     
       </div>
     );
   }

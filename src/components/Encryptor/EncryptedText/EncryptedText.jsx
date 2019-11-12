@@ -15,7 +15,7 @@ class EncryptedText extends React.Component {
   }
   render() {
     return (
-      <div className="EncryptedText col bg-danger text-white">
+      <div className="EncryptedText col text-white">
         <label htmlFor="encrypted-text" className="font-weight-bold">Encrypted text</label>
         <textarea
           value={
