@@ -1,7 +1,10 @@
 .EncryptedText {
-    text-align: center;
+    font-size: 1.3rem;
+    min-width: 320px;
+    label {
+        margin-top: 1rem;
+    }
     textarea {
-        margin: 1rem;
-        min-width: 90%;
+        margin-bottom: 1rem;
     }
 }

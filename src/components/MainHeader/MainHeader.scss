@@ -1,3 +1,53 @@
+@import url("https://fonts.googleapis.com/css?family=Monoton&display=swap");
 .MainHeader {
-    
+  .logo {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(23, 162, 184, 1));
   }
+  .text-under-logo {
+    margin: 1rem;
+    padding: 0.5rem;
+    letter-spacing: 0.4rem;
+    width: 75%;
+    font-family: "Monoton", cursive;
+    font-size: 1.4rem;
+  }
+}
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (min-width: 576px) {
+  .MainHeader {
+    .text-under-logo {
+      letter-spacing: 0.6rem;
+      font-size: 2rem;
+    }
+  }
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+  .MainHeader {
+    .text-under-logo {
+      letter-spacing: 0.8rem;
+      font-size: 2.4rem;
+    }
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .MainHeader {
+    .text-under-logo {
+      letter-spacing: 1rem;
+      font-size: 3rem;
+    }
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .MainHeader {
+    .text-under-logo {
+      letter-spacing: 1.6rem;
+      font-size: 4rem;
+    }
+  }
+}

@@ -1,6 +1,13 @@
 .Key {
-    text-align: center;
-    input {
-        margin: 1rem;
+    text-align: left;
+    font-size: 1.3rem;
+    label {
+        margin-top: 1rem;
     }
+}
+#eye {
+    position: relative;
+    left: -60px;
+    bottom: -58px;
+    cursor: pointer;
 }

@@ -7,7 +7,7 @@ import EncryptedText from "./EncryptedText/EncryptedText.jsx";
 class Encryptor extends React.Component {
   render() {
     return (
-      <div className="Encryptor row">
+      <main className="Encryptor row">
         <div className="col">
           <Key />
           <div className="row">
@@ -15,7 +15,7 @@ class Encryptor extends React.Component {
             <EncryptedText />
           </div>
         </div>
-      </div>
+      </main>
     );
   }
 }
