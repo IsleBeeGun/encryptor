@@ -18,7 +18,8 @@ class Key extends React.Component {
       <div className="Key row">
         <div className="col bg-warning">
           <input
-            placeholder="Your password.."
+            type="password"
+            placeholder="Password.. "
             onChange={this.handleKeyChange}
           />
         </div>
