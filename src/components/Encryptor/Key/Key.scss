@@ -1,7 +1,7 @@
 .Key {
     text-align: left;
     font-size: 1.3rem;
-    box-shadow: 0px 7px 7px -3px rgba(0,0,0,0.75);
+    // box-shadow: 0px 7px 7px -3px rgba(0,0,0,0.75);
     label {
         margin-top: 1rem;
     }
@@ -9,13 +9,13 @@
         font-size: 4rem;
         color: black;
         cursor: pointer;
+        filter: drop-shadow(0 0 5px rgba(255,255,255, 0.5));
         transition: color 500ms, font-size 200ms;
         &:hover {
             color: maroon;
             font-size: 4.5rem;
         }
     }
-    
 }
 #eye {
     position: relative;

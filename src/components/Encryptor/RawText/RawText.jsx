@@ -15,7 +15,7 @@ class RawText extends React.Component {
   }
   render() {
     return (
-      <div className="RawText col bg-success text-white">
+      <div className="RawText col text-white">
         <label htmlFor="raw-text" className="font-weight-bold">Initial text</label>
         <textarea
           value={
@@ -23,6 +23,7 @@ class RawText extends React.Component {
               this.props.storeState.rawText.length - 1
             ].rawText
           }
+          placeholder="Type here text you wish to encrypt.."
           onChange={this.handleRawTextChange}
           rows="10"
           cols="36"

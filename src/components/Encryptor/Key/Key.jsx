@@ -54,37 +54,35 @@ class Key extends React.Component {
     }
     return (
       <div className="Key row bg-warning">
-            <div className="col">
-              <div className="form-group">
-                <label htmlFor="password" className="font-weight-bold">
-                  Password
-                </label>
-                <input
-                  type={this.state.showPassword}
-                  id="password"
-                  placeholder="Password.. "
-                  onChange={this.handleKeyChange}
-                  className="form-control"
-                />
-              </div>
+        <div className="col">
+          <div className="form-group">
+            <label htmlFor="password" className="font-weight-bold">
+              Password
+            </label>
+            <input
+              type={this.state.showPassword}
+              id="password"
+              placeholder="Password.. "
+              onChange={this.handleKeyChange}
+              className="form-control"
+            />
+          </div>
+        </div>
+        <div className="col">
+          <div className="row">
+            <div className="col-fluid">{eyeIcon}</div>
+            <div className="col text-right">
+              <a
+                className="github-link"
+                href="https://github.com/IsleBeeGun/encryptor"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faGithub} />
+              </a>
             </div>
-            <div className="col">
-              <div className="row">
-                <div className="col-fluid">{eyeIcon}</div>
-                <div className="col text-right">
-                  <a
-                    className="github-link"
-                    href="https://github.com/IsleBeeGun/encryptor"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FontAwesomeIcon icon={faGithub} />
-                  </a>
-                </div>
-              </div>
-            </div>
-         
-     
+          </div>
+        </div>
       </div>
     );
   }
