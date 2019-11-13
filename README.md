@@ -50,7 +50,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ## Authors
 
-* **IsleBeeGun** - *Initial work* - [PurpleBooth](https://github.com/IsleBeeGun)
+* **IsleBeeGun** - *Initial work* - [github](https://github.com/IsleBeeGun)
 
 ## License
 
