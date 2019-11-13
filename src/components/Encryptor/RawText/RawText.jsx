@@ -16,7 +16,7 @@ class RawText extends React.Component {
   render() {
     return (
       <div className="RawText col text-white">
-        <label htmlFor="raw-text" className="font-weight-bold">Initial text</label>
+        <label htmlFor="raw-text" className="font-weight-bold">Normal text</label>
         <textarea
           value={
             this.props.storeState.rawText[
