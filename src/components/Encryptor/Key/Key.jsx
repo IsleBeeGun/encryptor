@@ -4,7 +4,11 @@ import { store, provideKey } from "../../../store/store";
 import Algorithm from "../Algorithm";
 import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import {
+  faEye,
+  faEyeSlash,
+  faQuestionCircle
+} from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 class Key extends React.Component {
@@ -70,16 +74,70 @@ class Key extends React.Component {
         </div>
         <div className="col">
           <div className="row">
+            <div className="col">
+              <p className="font-weight-bold">&nbsp;</p>
+            </div>
+          </div>
+          <div className="row">
             <div className="col-fluid">{eyeIcon}</div>
-            <div className="col text-right">
+            <div className="col d-flex flex-row-reverse align-items-center">
               <a
-                className="github-link"
+                role="button"
+                className="btn btn-dark btn-lg ml-2"
                 href="https://github.com/IsleBeeGun/encryptor"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FontAwesomeIcon icon={faGithub} />
+                <FontAwesomeIcon icon={faGithub} size="lg" />
               </a>
+              <button
+                type="button"
+                data-toggle="modal"
+                data-target="#helpModal"
+                className="btn btn-primary btn-lg"
+              >
+                <FontAwesomeIcon icon={faQuestionCircle} size="lg" />
+              </button>
+            </div>
+          </div>
+        </div>
+        {/* Modal message */}
+        <div
+          className="modal fade"
+          id="helpModal"
+          tabIndex="-1"
+          role="dialog"
+          aria-labelledby="helpModalTitle"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog modal-dialog-centered" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="helpModalTitle">
+                  Modal title
+                </h5>
+                <button
+                  type="button"
+                  className="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div className="modal-body">...</div>
+              <div className="modal-footer">
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="button" className="btn btn-primary">
+                  Save changes
+                </button>
+              </div>
             </div>
           </div>
         </div>

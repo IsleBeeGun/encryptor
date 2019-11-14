@@ -4,6 +4,7 @@ import "normalize.css";
 import "./reset.scss";
 import "./index.scss";
 import "bootstrap/scss/bootstrap.scss";
+import 'bootstrap/dist/js/bootstrap.bundle';
 import App from "./components/App/App.jsx";
 import * as serviceWorker from "./serviceWorker";
 import { store } from "./store/store";
