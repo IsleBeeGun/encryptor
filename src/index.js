@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "normalize.css";
-import "./reset.scss";
+// import "./reset.scss";
 import "./index.scss";
 import "bootstrap/scss/bootstrap.scss";
 import 'bootstrap/dist/js/bootstrap.bundle';
