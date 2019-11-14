@@ -23,7 +23,7 @@ class EncryptedText extends React.Component {
               this.props.storeState.encryptedText.length - 1
             ].encryptedText
           }
-          placeholder="Your encrypted text will appear here.."
+          placeholder="Here comes the encrypted text.."
           onChange={this.handleEncryptedTextChange}
           rows="10"
           cols="36"
