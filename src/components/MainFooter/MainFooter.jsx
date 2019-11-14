@@ -6,7 +6,7 @@ class MainFooter extends React.Component {
     return (
       <footer className="MainFooter row">
         <div className="col bg-dark text-white-50">
-          <h1 className="text-right h1">..byIBG</h1>
+          <p className="text-right h1">© 2019 IsleBeeGun</p>
         </div>  
       </footer>
     );
