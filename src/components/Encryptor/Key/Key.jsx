@@ -62,7 +62,7 @@ class Key extends React.Component {
             <input
               type={this.state.showPassword}
               id="password"
-              placeholder="Password.. "
+              placeholder="Provide your password.."
               onChange={this.handleKeyChange}
               className="form-control"
             />
