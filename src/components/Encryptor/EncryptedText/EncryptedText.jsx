@@ -8,10 +8,19 @@ class EncryptedText extends React.Component {
   constructor(props) {
     super(props);
     this.handleEncryptedTextChange = this.handleEncryptedTextChange.bind(this);
+    this.isDisabled = this.isDisabled.bind(this);
   }
   async handleEncryptedTextChange(event) {
     await store.dispatch(provideEncryptedText(event.target.value));
     await Algorithm.perform();
+  }
+  isDisabled() {
+    let state = store.getState();
+    if (state.key[state.key.length - 1].key === '') {
+      return true;
+    } else {
+      return false;
+    }
   }
   render() {
     return (
@@ -29,6 +38,7 @@ class EncryptedText extends React.Component {
           cols="36"
           className="form-control"
           id="encrypted-text"
+          disabled={this.isDisabled()}
         ></textarea>
       </div>
     );

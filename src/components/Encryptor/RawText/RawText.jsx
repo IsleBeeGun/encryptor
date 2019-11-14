@@ -8,10 +8,19 @@ class RawText extends React.Component {
   constructor(props) {
     super(props);
     this.handleRawTextChange = this.handleRawTextChange.bind(this);
+    this.isDisabled = this.isDisabled.bind(this);
   }
   async handleRawTextChange(event) {
     await store.dispatch(provideRawText(event.target.value));
     await Algorithm.perform();
+  }
+  isDisabled() {
+    let state = store.getState();
+    if (state.key[state.key.length - 1].key === '') {
+      return true;
+    } else {
+      return false;
+    }
   }
   render() {
     return (
@@ -29,6 +38,7 @@ class RawText extends React.Component {
           cols="36"
           className="form-control"
           id = "raw-text"
+          disabled={this.isDisabled()}
         />
       </div>
     );
