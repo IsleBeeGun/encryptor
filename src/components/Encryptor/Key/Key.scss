@@ -1,17 +1,59 @@
 .Key {
-    text-align: left;
-    font-size: 1.3rem;
-    // box-shadow: 0px 7px 7px -3px rgba(0,0,0,0.75);
-    label {
-        margin-top: 1rem;
-    }
-    input {
-        background-color: lighten(#ffc107, 40%);
-    }
+  text-align: left;
+  font-size: 1.3rem;
+  // box-shadow: 0px 7px 7px -3px rgba(0,0,0,0.75);
+  label {
+    margin-top: 1rem;
+  }
+  input {
+    background-color: lighten(#ffc107, 40%);
+  }
 }
 #eye {
-    position: relative;
-    left: -50px;
-    bottom: -10px;
-    cursor: pointer;
+  position: relative;
+  left: -50px;
+  bottom: -8px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+#spacer {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+/* responsive queries for buttons */
+
+.btn {
+  width: 45px;
+  font-size: 1rem;
+  padding: 5px;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 350px) {
+  .btn {
+    width: 50px;
+  }
+}
+
+@media screen and (min-width: 576px) {
+    .btn {
+      width: 75px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .btn {
+      width: 100px;
+    }
+  }
+
+@media screen and (min-width: 992px) {
+  .btn {
+    width: 100px;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+  }
 }

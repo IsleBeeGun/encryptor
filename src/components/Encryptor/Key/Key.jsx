@@ -75,12 +75,12 @@ class Key extends React.Component {
         <div className="col">
           <div className="row">
             <div className="col">
-              <p className="font-weight-bold">&nbsp;</p>
+              <p className="font-weight-bold" id="spacer">&nbsp;</p>
             </div>
           </div>
           <div className="row">
             <div className="col-fluid">{eyeIcon}</div>
-            <div className="col d-flex flex-row-reverse align-items-center">
+            <div className="col d-flex flex-row-reverse">
               <a
                 role="button"
                 className="btn btn-dark btn-lg ml-2"
